@@ -1,7 +1,7 @@
 const PRODUCT_URLS = {
-  precifica: "",
-  financeiro: "",
-  negocio: ""
+  precifica: "https://pay.hotmart.com/B107154291R",
+  financeiro: "https://pay.hotmart.com/U107329608Y",
+  negocio: "https://pay.hotmart.com/X107329706V"
 };
 
 const productDetails = {
