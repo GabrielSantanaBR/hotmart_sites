@@ -1,3 +1,8 @@
+const refinementStylesheet = document.createElement("link");
+refinementStylesheet.rel = "stylesheet";
+refinementStylesheet.href = "refinements.css";
+document.head.appendChild(refinementStylesheet);
+
 const PRODUCT_URLS = {
   precifica: "https://pay.hotmart.com/B107154291R",
   financeiro: "https://pay.hotmart.com/U107329608Y",
