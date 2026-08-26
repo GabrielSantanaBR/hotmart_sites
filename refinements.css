@@ -1,4 +1,4 @@
-/* NexoPlan visual refinements — preserve the rich covers while preventing overlap */
+/* NexoPlan visual refinements — keep the original rich look, only fix spacing/overlap */
 
 .products-grid {
   gap: 26px;
@@ -33,7 +33,8 @@
 
 .cover-copy {
   margin-top: 44px;
-  max-width: 78%;
+  position: relative;
+  z-index: 3;
 }
 
 .cover-copy small {
@@ -46,11 +47,9 @@
   font-size: clamp(2.42rem, 3.25vw, 3.55rem);
 }
 
-/* Keep the explanatory phrases visible, but give them a protected text column. */
 .cover-copy p {
   display: block;
   margin: 0;
-  max-width: 255px;
   font-size: .72rem;
   line-height: 1.52;
   color: #52695a;
@@ -62,34 +61,36 @@
   font-size: .62rem;
   letter-spacing: .02em;
   opacity: .82;
-  z-index: 3;
+  z-index: 4;
 }
 
 .cover-art {
   z-index: 1;
+  pointer-events: none;
 }
 
-/* PRECIFICA — text stays on the left/top, calculator lives in the lower-right. */
+/* PRECIFICA
+   Keep the full phrase on the left and reserve the lower-right for price visuals. */
 .precifica .cover-copy {
-  max-width: 70%;
+  max-width: 64%;
 }
 
 .precifica .cover-copy p {
-  max-width: 225px;
+  max-width: 190px;
 }
 
 .precifica .pricing-art {
-  right: 14px;
-  bottom: 48px;
-  width: 47%;
-  height: 34%;
+  right: 12px;
+  bottom: 43px;
+  width: 40%;
+  height: 31%;
 }
 
 .precifica .calc-panel {
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 142px;
+  width: 128px;
   padding: 11px 12px;
   border-radius: 15px;
 }
@@ -100,11 +101,11 @@
 }
 
 .precifica .calc-panel span {
-  font-size: .45rem;
+  font-size: .43rem;
 }
 
 .precifica .calc-panel strong {
-  font-size: .78rem;
+  font-size: .76rem;
   margin-bottom: 7px;
 }
 
@@ -118,83 +119,98 @@
 }
 
 .precifica .coin-a {
-  width: 60px;
-  height: 60px;
-  right: 0;
+  width: 56px;
+  height: 56px;
+  right: -1px;
   top: -8px;
-  font-size: .82rem;
+  font-size: .8rem;
 }
 
 .precifica .coin-b {
-  width: 42px;
-  height: 42px;
-  right: 58px;
-  top: 38px;
-  font-size: .78rem;
+  width: 39px;
+  height: 39px;
+  right: 53px;
+  top: 35px;
+  font-size: .73rem;
 }
 
-/* GESTÃO FINANCEIRA — chart is anchored to the lower-right, away from title and paragraph. */
+/* GESTÃO FINANCEIRA
+   Create an actual right-side visual column so the title and sentence never sit under the chart. */
 .financeiro .cover-copy {
-  max-width: 78%;
+  max-width: 60%;
 }
 
 .financeiro .cover-copy h3 {
-  font-size: clamp(2.28rem, 3vw, 3.35rem);
+  max-width: 190px;
+  font-size: clamp(2.22rem, 2.85vw, 3.12rem);
 }
 
 .financeiro .cover-copy p {
-  max-width: 255px;
+  max-width: 192px;
 }
 
 .financeiro .finance-art {
-  right: 12px;
-  bottom: 40px;
-  width: 45%;
-  height: 32%;
+  right: 8px;
+  bottom: 42px;
+  width: 35%;
+  height: 46%;
 }
 
 .financeiro .trend-line {
   display: block;
-  width: 128px;
-  top: 26px;
-  left: 0;
+  width: 110px;
+  top: 78px;
+  left: 2px;
   transform: rotate(-22deg);
-  box-shadow: 42px -15px 0 -0.5px #245b38;
+  box-shadow: 36px -13px 0 -0.5px #245b38;
 }
 
 .financeiro .finance-badge {
   left: auto;
-  right: 2px;
-  top: -12px;
-  min-width: 116px;
-  padding: 9px 11px;
+  right: 0;
+  top: 12px;
+  min-width: 108px;
+  padding: 9px 10px;
+}
+
+.financeiro .finance-badge span {
+  font-size: .43rem;
+}
+
+.financeiro .finance-badge strong {
+  font-size: .69rem;
 }
 
 .financeiro .chart-bars {
-  right: 4px;
+  right: 2px;
   bottom: 0;
-  height: 92px;
-  gap: 8px;
+  height: 82px;
+  gap: 7px;
 }
 
 .financeiro .chart-bars i {
-  width: 18px;
+  width: 16px;
 }
 
-/* NEGÓCIO 360 — keep the full orbit idea, but contain every label inside the card. */
+/* NEGÓCIO 360
+   Keep every orbit/label, but put the whole system in its own right-side zone. */
 .negocio .cover-copy {
-  max-width: 72%;
+  max-width: 59%;
+}
+
+.negocio .cover-copy h3 {
+  max-width: 190px;
 }
 
 .negocio .cover-copy p {
-  max-width: 250px;
+  max-width: 188px;
 }
 
 .negocio .business-art {
-  right: -2px;
-  bottom: 38px;
-  width: 46%;
-  height: 38%;
+  right: 5px;
+  bottom: 35px;
+  width: 38%;
+  height: 39%;
 }
 
 .negocio .business-art .orbit-one,
@@ -206,51 +222,52 @@
 }
 
 .negocio .business-art .orbit-one {
-  width: 150px;
-  height: 150px;
-  left: 30px;
-  top: 18px;
+  width: 138px;
+  height: 138px;
+  left: 6px;
+  top: 19px;
   opacity: .72;
 }
 
 .negocio .business-art .orbit-two {
-  width: 108px;
-  height: 108px;
-  left: 51px;
-  top: 39px;
+  width: 100px;
+  height: 100px;
+  left: 25px;
+  top: 38px;
   opacity: .75;
 }
 
 .negocio .business-core {
-  width: 70px;
-  height: 70px;
-  left: 70px;
-  top: 58px;
+  width: 66px;
+  height: 66px;
+  left: 42px;
+  top: 55px;
   box-shadow: 0 14px 30px rgba(25, 83, 50, .16);
 }
 
 .negocio .node {
-  font-size: .5rem;
-  padding: 5px 8px;
+  font-size: .47rem;
+  padding: 4px 7px;
   white-space: nowrap;
+  z-index: 2;
 }
 
 .negocio .node-a {
-  left: 0;
-  top: 52px;
+  left: 5px;
+  top: 8px;
 }
 
 .negocio .node-b {
   right: 2px;
-  top: 24px;
+  top: 31px;
 }
 
 .negocio .node-c {
-  right: 8px;
-  bottom: 5px;
+  right: 5px;
+  bottom: 7px;
 }
 
-/* Body hierarchy stays clean, but no content is removed. */
+/* Card body hierarchy remains untouched in content. */
 .product-body {
   padding-top: 28px;
 }
@@ -288,47 +305,54 @@
     aspect-ratio: 1.18;
   }
 
-  .cover-copy,
   .precifica .cover-copy,
   .financeiro .cover-copy,
   .negocio .cover-copy {
-    max-width: 66%;
+    max-width: 62%;
   }
 
-  .cover-art,
+  .precifica .cover-copy p,
+  .financeiro .cover-copy p,
+  .negocio .cover-copy p {
+    max-width: 210px;
+  }
+
   .precifica .pricing-art,
   .financeiro .finance-art,
   .negocio .business-art {
-    width: 38%;
     right: 24px;
+    width: 34%;
   }
 }
 
 @media (max-width: 640px) {
   .product-cover {
-    min-height: 390px;
+    min-height: 405px;
     aspect-ratio: auto;
   }
 
-  .cover-copy,
   .precifica .cover-copy,
   .financeiro .cover-copy,
   .negocio .cover-copy {
     max-width: 88%;
   }
 
-  .cover-copy p,
   .precifica .cover-copy p,
   .financeiro .cover-copy p,
   .negocio .cover-copy p {
-    max-width: 82%;
+    max-width: 80%;
   }
 
   .precifica .pricing-art,
   .financeiro .finance-art,
   .negocio .business-art {
-    width: 42%;
+    width: 39%;
     right: 14px;
-    bottom: 52px;
+    bottom: 50px;
+  }
+
+  .financeiro .cover-copy h3,
+  .negocio .cover-copy h3 {
+    max-width: none;
   }
 }
