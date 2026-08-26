@@ -1,6 +1,5 @@
-/* NexoPlan visual refinements — cleaner product covers and stronger hierarchy */
+/* NexoPlan visual refinements — preserve the rich covers while preventing overlap */
 
-/* Product cards: more breathing room, less visual noise */
 .products-grid {
   gap: 26px;
 }
@@ -10,7 +9,7 @@
 }
 
 .product-cover {
-  aspect-ratio: 1.02;
+  aspect-ratio: .98;
   padding: 28px;
   isolation: isolate;
 }
@@ -20,21 +19,21 @@
   position: absolute;
   width: 230px;
   height: 230px;
-  right: -88px;
-  bottom: -78px;
+  right: -92px;
+  bottom: -82px;
   border-radius: 50%;
-  background: rgba(47, 130, 84, .08);
+  background: rgba(47, 130, 84, .075);
   z-index: -1;
 }
 
 .cover-topline {
   font-size: .78rem;
-  opacity: .9;
+  opacity: .92;
 }
 
 .cover-copy {
-  margin-top: 46px;
-  max-width: 76%;
+  margin-top: 44px;
+  max-width: 78%;
 }
 
 .cover-copy small {
@@ -43,106 +42,215 @@
 }
 
 .cover-copy h3 {
-  margin-top: 12px;
-  margin-bottom: 0;
-  font-size: clamp(2.45rem, 3.4vw, 3.65rem);
+  margin: 11px 0 11px;
+  font-size: clamp(2.42rem, 3.25vw, 3.55rem);
 }
 
-/* The description repeated information already present in the card body.
-   Hiding it makes the cover read like premium packaging instead of a mini brochure. */
+/* Keep the explanatory phrases visible, but give them a protected text column. */
 .cover-copy p {
-  display: none;
+  display: block;
+  margin: 0;
+  max-width: 255px;
+  font-size: .72rem;
+  line-height: 1.52;
+  color: #52695a;
 }
 
 .cover-tagline {
   left: 28px;
-  bottom: 24px;
+  bottom: 22px;
   font-size: .62rem;
   letter-spacing: .02em;
-  opacity: .8;
+  opacity: .82;
+  z-index: 3;
 }
 
-/* Keep only one strong visual cue on each cover */
 .cover-art {
-  right: 18px;
-  bottom: 56px;
-  width: 44%;
-  height: 38%;
-  opacity: .96;
+  z-index: 1;
 }
 
-/* Precifica */
-.coin-b {
-  display: none;
+/* PRECIFICA — text stays on the left/top, calculator lives in the lower-right. */
+.precifica .cover-copy {
+  max-width: 70%;
 }
 
-.coin-a {
-  width: 58px;
-  height: 58px;
+.precifica .cover-copy p {
+  max-width: 225px;
+}
+
+.precifica .pricing-art {
+  right: 14px;
+  bottom: 48px;
+  width: 47%;
+  height: 34%;
+}
+
+.precifica .calc-panel {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 142px;
+  padding: 11px 12px;
+  border-radius: 15px;
+}
+
+.precifica .calc-panel span,
+.precifica .calc-panel strong {
+  display: block;
+}
+
+.precifica .calc-panel span {
+  font-size: .45rem;
+}
+
+.precifica .calc-panel strong {
+  font-size: .78rem;
+  margin-bottom: 7px;
+}
+
+.precifica .calc-panel strong:last-child {
+  margin-bottom: 0;
+}
+
+.precifica .coin-a,
+.precifica .coin-b {
+  display: grid;
+}
+
+.precifica .coin-a {
+  width: 60px;
+  height: 60px;
   right: 0;
-  top: -10px;
+  top: -8px;
   font-size: .82rem;
 }
 
-.calc-panel {
-  width: 138px;
-  padding: 11px 12px;
-  border-radius: 14px;
+.precifica .coin-b {
+  width: 42px;
+  height: 42px;
+  right: 58px;
+  top: 38px;
+  font-size: .78rem;
 }
 
-.calc-panel span:first-of-type,
-.calc-panel strong:first-of-type {
-  display: none;
+/* GESTÃO FINANCEIRA — chart is anchored to the lower-right, away from title and paragraph. */
+.financeiro .cover-copy {
+  max-width: 78%;
 }
 
-.calc-panel strong {
-  margin-bottom: 0;
-  font-size: .88rem;
+.financeiro .cover-copy h3 {
+  font-size: clamp(2.28rem, 3vw, 3.35rem);
 }
 
-/* Gestão Financeira */
-.trend-line {
-  display: none;
+.financeiro .cover-copy p {
+  max-width: 255px;
 }
 
-.finance-badge {
+.financeiro .finance-art {
+  right: 12px;
+  bottom: 40px;
+  width: 45%;
+  height: 32%;
+}
+
+.financeiro .trend-line {
+  display: block;
+  width: 128px;
+  top: 26px;
+  left: 0;
+  transform: rotate(-22deg);
+  box-shadow: 42px -15px 0 -0.5px #245b38;
+}
+
+.financeiro .finance-badge {
   left: auto;
   right: 2px;
-  top: -18px;
+  top: -12px;
   min-width: 116px;
+  padding: 9px 11px;
 }
 
-.chart-bars {
-  right: 8px;
-  bottom: 4px;
+.financeiro .chart-bars {
+  right: 4px;
+  bottom: 0;
   height: 92px;
   gap: 8px;
 }
 
-.chart-bars i {
+.financeiro .chart-bars i {
   width: 18px;
 }
 
-/* Negócio 360 */
-.business-art .orbit-two,
-.business-art .node-b,
-.business-art .node-c {
-  display: none;
+/* NEGÓCIO 360 — keep the full orbit idea, but contain every label inside the card. */
+.negocio .cover-copy {
+  max-width: 72%;
 }
 
-.business-art .orbit-one {
-  opacity: .65;
+.negocio .cover-copy p {
+  max-width: 250px;
 }
 
-.business-art .node-a {
-  font-size: .58rem;
+.negocio .business-art {
+  right: -2px;
+  bottom: 38px;
+  width: 46%;
+  height: 38%;
 }
 
-.business-core {
+.negocio .business-art .orbit-one,
+.negocio .business-art .orbit-two,
+.negocio .business-art .node-a,
+.negocio .business-art .node-b,
+.negocio .business-art .node-c {
+  display: block;
+}
+
+.negocio .business-art .orbit-one {
+  width: 150px;
+  height: 150px;
+  left: 30px;
+  top: 18px;
+  opacity: .72;
+}
+
+.negocio .business-art .orbit-two {
+  width: 108px;
+  height: 108px;
+  left: 51px;
+  top: 39px;
+  opacity: .75;
+}
+
+.negocio .business-core {
+  width: 70px;
+  height: 70px;
+  left: 70px;
+  top: 58px;
   box-shadow: 0 14px 30px rgba(25, 83, 50, .16);
 }
 
-/* Cleaner body hierarchy */
+.negocio .node {
+  font-size: .5rem;
+  padding: 5px 8px;
+  white-space: nowrap;
+}
+
+.negocio .node-a {
+  left: 0;
+  top: 52px;
+}
+
+.negocio .node-b {
+  right: 2px;
+  top: 24px;
+}
+
+.negocio .node-c {
+  right: 8px;
+  bottom: 5px;
+}
+
+/* Body hierarchy stays clean, but no content is removed. */
 .product-body {
   padding-top: 28px;
 }
@@ -167,7 +275,6 @@
   min-height: 48px;
 }
 
-/* Small polish to hero so products remain the focus */
 .hero-card-main::after {
   opacity: .72;
 }
@@ -178,32 +285,50 @@
 
 @media (max-width: 980px) {
   .product-cover {
-    aspect-ratio: 1.22;
+    aspect-ratio: 1.18;
   }
 
-  .cover-copy {
-    max-width: 68%;
+  .cover-copy,
+  .precifica .cover-copy,
+  .financeiro .cover-copy,
+  .negocio .cover-copy {
+    max-width: 66%;
   }
 
-  .cover-art {
-    width: 36%;
-    right: 32px;
+  .cover-art,
+  .precifica .pricing-art,
+  .financeiro .finance-art,
+  .negocio .business-art {
+    width: 38%;
+    right: 24px;
   }
 }
 
 @media (max-width: 640px) {
   .product-cover {
-    min-height: 350px;
+    min-height: 390px;
     aspect-ratio: auto;
   }
 
-  .cover-copy {
+  .cover-copy,
+  .precifica .cover-copy,
+  .financeiro .cover-copy,
+  .negocio .cover-copy {
+    max-width: 88%;
+  }
+
+  .cover-copy p,
+  .precifica .cover-copy p,
+  .financeiro .cover-copy p,
+  .negocio .cover-copy p {
     max-width: 82%;
   }
 
-  .cover-art {
-    width: 40%;
-    right: 18px;
-    bottom: 58px;
+  .precifica .pricing-art,
+  .financeiro .finance-art,
+  .negocio .business-art {
+    width: 42%;
+    right: 14px;
+    bottom: 52px;
   }
 }
