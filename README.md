@@ -15,10 +15,17 @@ Apresentar a NexoPlan como um ecossistema de soluções para pequenos negócios 
 - `index.html` — landing page principal
 - `styles.css` — identidade visual e responsividade
 - `script.js` — navegação, animações e interações
+- `assets/` — logo transparente e ícone da aba do navegador
 
 ## Links de compra
 
-Os botões de compra estão inicialmente desativados e marcados como `Em breve`. Quando os links finais da Hotmart forem definidos, basta substituir os valores no objeto `PRODUCT_URLS` em `script.js`.
+Cada solução possui um link direto para seu checkout na Hotmart:
+
+- Precifica — `B107154291R`
+- Gestão Financeira — `U107329608Y`
+- Negócio 360 — `X107329706V`
+
+O site também inclui prévias visuais das áreas principais de cada ferramenta, descrições orientadas a resultados, comparação por problema e modal acessível com os itens incluídos.
 
 ## Publicação
 

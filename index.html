@@ -1,326 +1,164 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="NexoPlan: soluções digitais para precificação, gestão financeira e organização de pequenos negócios." />
-  <meta name="theme-color" content="#08120e" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="NexoPlan: soluções práticas de precificação, controle financeiro e gestão para pequenos negócios.">
+  <meta name="theme-color" content="#07110c">
+  <meta property="og:title" content="NexoPlan — Precifique. Planeje. Lucre.">
+  <meta property="og:description" content="Organize os números do seu negócio e tome decisões com mais clareza.">
   <title>NexoPlan — Precifique. Planeje. Lucre.</title>
+  <link rel="icon" type="image/png" href="assets/nexoplan-icon.png">
+  <link rel="apple-touch-icon" href="assets/nexoplan-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="page-glow glow-one"></div>
-  <div class="page-glow glow-two"></div>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
 
-  <header class="site-header" id="top">
-    <a class="brand" href="#top" aria-label="NexoPlan — início">
-      <span class="brand-mark" aria-hidden="true">N</span>
-      <span class="brand-name">NexoPlan</span>
-    </a>
-
-    <nav class="nav" aria-label="Navegação principal">
-      <a href="#solucoes">Soluções</a>
-      <a href="#como-funciona">Como funciona</a>
-      <a href="#comparativo">Comparativo</a>
-      <a href="#faq">Dúvidas</a>
+  <header class="site-header" id="topo">
+    <a class="brand brand-horizontal" href="#topo" aria-label="NexoPlan — início"><img src="assets/nexoplan-icon.png" alt="" width="42" height="42"><span><b>Nexo</b>Plan</span></a>
+    <nav class="nav" id="main-nav" aria-label="Navegação principal">
+      <a href="#solucoes">Soluções</a><a href="#como-funciona">Como funciona</a><a href="#comparativo">Comparativo</a><a href="#duvidas">Dúvidas</a>
     </nav>
-
-    <a class="header-cta" href="#solucoes">Conhecer soluções</a>
-    <button class="menu-button" type="button" aria-label="Abrir menu" aria-expanded="false">
-      <span></span><span></span>
-    </button>
+    <a class="header-cta" href="#solucoes">Escolher solução <span aria-hidden="true">↗</span></a>
+    <button class="menu-button" type="button" aria-label="Abrir menu" aria-controls="main-nav" aria-expanded="false"><span></span><span></span></button>
   </header>
 
-  <main>
+  <main id="conteudo">
     <section class="hero section-shell">
       <div class="hero-copy reveal">
         <span class="eyebrow">GESTÃO SIMPLES PARA NEGÓCIOS REAIS</span>
-        <h1>Menos improviso.<br><span>Mais controle.</span></h1>
-        <p class="hero-text">
-          Soluções digitais para você entender seus números, organizar a operação e tomar decisões melhores sem depender de planilhas confusas.
-        </p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#solucoes">Encontrar minha solução</a>
-          <a class="button button-ghost" href="#ecossistema">Ver ecossistema</a>
-        </div>
-        <div class="trust-row" aria-label="Principais benefícios">
-          <span><i></i> Uso simples</span>
-          <span><i></i> Acesso imediato após compra</span>
-          <span><i></i> Feito para pequenos negócios</span>
-        </div>
+        <h1>Decida com números.<br><span>Cresça com clareza.</span></h1>
+        <p class="hero-text">Ferramentas práticas para você descobrir quanto cobrar, controlar o dinheiro e organizar a operação sem depender de controles confusos.</p>
+        <div class="hero-actions"><a class="button button-primary" href="#solucoes">Encontrar minha solução <span aria-hidden="true">→</span></a><a class="button button-ghost" href="#como-funciona">Entender o processo</a></div>
+        <ul class="trust-row" aria-label="Benefícios dos produtos"><li><i></i> Uso simples</li><li><i></i> Material de apoio</li><li><i></i> Acesso pela Hotmart</li></ul>
       </div>
-
-      <div class="hero-visual reveal delay-1" aria-label="Ecossistema de produtos NexoPlan">
-        <div class="hero-card hero-card-main">
-          <div class="mini-brand"><span>N</span> NexoPlan</div>
-          <div class="hero-card-kicker">ECOSSISTEMA DE GESTÃO</div>
-          <div class="hero-card-title">Precifique.<br>Planeje.<br><strong>Lucre.</strong></div>
-          <div class="hero-card-footer">
-            <span>3 soluções</span>
-            <span>1 negócio mais organizado</span>
-          </div>
-        </div>
-        <div class="floating-chip chip-one"><span class="dot dot-lime"></span> Precificação</div>
-        <div class="floating-chip chip-two"><span class="dot dot-green"></span> Financeiro</div>
-        <div class="floating-chip chip-three"><span class="dot dot-soft"></span> Operação 360°</div>
+      <div class="hero-dashboard reveal delay-1" aria-label="Exemplo de painel NexoPlan">
+        <div class="dashboard-top"><div class="dashboard-brand"><img src="assets/nexoplan-icon.png" alt="" width="34" height="34"><span>Painel do negócio</span></div><span class="status-pill"><i></i> Atualizado</span></div>
+        <div class="dashboard-kpis"><article><span>Preço sugerido</span><strong>R$ 32,90</strong><small>Margem de 38%</small></article><article><span>Resultado do mês</span><strong>R$ 5.240</strong><small class="positive">↑ 12,4%</small></article></div>
+        <div class="dashboard-chart"><div class="chart-head"><span>Visão do resultado</span><b>Últimos 6 meses</b></div><div class="chart-grid"><i style="--h:34%"></i><i style="--h:46%"></i><i style="--h:41%"></i><i style="--h:62%"></i><i style="--h:74%"></i><i style="--h:88%"></i></div></div>
+        <div class="dashboard-foot"><span><i class="legend receita"></i>Receitas</span><span><i class="legend custo"></i>Custos</span><strong>+ organização</strong></div>
       </div>
     </section>
 
-    <section class="proof-strip" aria-label="Proposta de valor">
-      <div>Saiba quanto cobrar</div>
-      <span>•</span>
-      <div>Entenda para onde seu dinheiro vai</div>
-      <span>•</span>
-      <div>Organize vendas, estoque e clientes</div>
-    </section>
+    <section class="proof-strip" aria-label="Resultados que a NexoPlan ajuda a alcançar"><span>Saiba quanto cobrar</span><i></i><span>Separe faturamento de lucro</span><i></i><span>Organize vendas, estoque e clientes</span></section>
 
-    <section class="section-shell intro-section" id="ecossistema">
-      <div class="section-heading reveal">
-        <span class="eyebrow">UM ECOSSISTEMA, TRÊS ETAPAS</span>
-        <h2>Comece pelo problema que mais pesa hoje.</h2>
-        <p>Você não precisa controlar tudo de uma vez. Escolha a solução certa para o momento do seu negócio e evolua com a NexoPlan.</p>
-      </div>
+    <section class="section-shell journey" id="como-funciona">
+      <div class="section-heading reveal"><span class="eyebrow">UM CAMINHO PARA CADA MOMENTO</span><h2>Comece pelo problema que mais pesa hoje.</h2><p>As soluções foram organizadas para acompanhar a evolução do seu negócio: primeiro preço, depois controle financeiro e, quando for necessário, visão completa da operação.</p></div>
       <div class="journey-grid">
-        <article class="journey-step reveal">
-          <span>01</span>
-          <h3>Precificar</h3>
-          <p>Descubra seus custos e construa preços com margem, sem copiar concorrentes no escuro.</p>
-        </article>
-        <article class="journey-step reveal delay-1">
-          <span>02</span>
-          <h3>Controlar</h3>
-          <p>Acompanhe receitas, despesas e resultados para saber o que realmente sobra no fim do mês.</p>
-        </article>
-        <article class="journey-step reveal delay-2">
-          <span>03</span>
-          <h3>Gerir</h3>
-          <p>Conecte vendas, clientes, estoque, metas e operação para tomar decisões com visão do negócio inteiro.</p>
-        </article>
+        <article class="journey-step reveal"><span>01</span><h3>Precificar</h3><p>Transforme ingredientes, materiais, custos fixos e margem em um preço sustentável.</p></article>
+        <article class="journey-step reveal delay-1"><span>02</span><h3>Controlar</h3><p>Acompanhe o que entra, o que sai, o que vence e quanto realmente sobra.</p></article>
+        <article class="journey-step reveal delay-2"><span>03</span><h3>Gerir</h3><p>Conecte produtos, pedidos, clientes, estoque, fornecedores e metas.</p></article>
       </div>
     </section>
 
-    <section class="products-section" id="solucoes">
+    <section class="solutions" id="solucoes">
       <div class="section-shell">
-        <div class="section-heading reveal">
-          <span class="eyebrow">SOLUÇÕES NEXOPLAN</span>
-          <h2>Escolha o nível de controle que seu negócio precisa.</h2>
-        </div>
+        <div class="section-heading reveal"><span class="eyebrow">SOLUÇÕES NEXOPLAN</span><h2>Veja a ferramenta antes de escolher.</h2><p>As prévias abaixo mostram como cada solução transforma dados do dia a dia em informações úteis para decidir.</p></div>
 
-        <div class="products-grid">
-          <article class="product-card precifica reveal" data-product="precifica">
-            <div class="product-cover" aria-label="NexoPlan Precifica">
-              <div class="cover-topline"><span class="cover-mark">N</span><span>NexoPlan</span></div>
-              <div class="cover-copy">
-                <small>PLANILHA DE PRECIFICAÇÃO</small>
-                <h3>Precifica</h3>
-                <p>Descubra quanto seu produto custa e quanto cobrar para ter margem.</p>
-              </div>
-              <div class="cover-art pricing-art" aria-hidden="true">
-                <div class="coin coin-a">R$</div>
-                <div class="coin coin-b">%</div>
-                <div class="calc-panel">
-                  <span>CUSTO</span><strong>R$ 18,40</strong>
-                  <span>PREÇO SUGERIDO</span><strong>R$ 32,90</strong>
-                </div>
-              </div>
-              <div class="cover-tagline">Precifique. Planeje. Lucre.</div>
-            </div>
-            <div class="product-body">
-              <div class="product-meta"><span class="product-number">01</span><span class="product-type">PRECIFICAÇÃO</span></div>
-              <h3>NexoPlan Precifica</h3>
-              <p class="product-lead">Para quem vende produtos e quer parar de definir preço no achismo.</p>
-              <ul>
-                <li>Custos de ingredientes e materiais</li>
-                <li>Margem e preço de venda</li>
-                <li>Custos fixos e ponto de equilíbrio</li>
-                <li>Metas e análise de rentabilidade</li>
-              </ul>
-              <div class="product-actions">
-                <button class="button button-primary purchase-button" data-buy="precifica" type="button">Em breve</button>
-                <button class="text-button detail-button" data-detail="precifica" type="button">Ver detalhes <span>→</span></button>
-              </div>
-            </div>
-          </article>
+        <article class="product-showcase reveal" data-product="precifica">
+          <div class="sheet-preview preview-pricing" aria-label="Prévia da planilha NexoPlan Precifica">
+            <div class="sheet-toolbar"><span class="sheet-logo">N</span><b>Precificação de produto</b><span class="sheet-tab">Dashboard</span></div>
+            <div class="sheet-metrics"><div><small>Custo unitário</small><strong>R$ 18,40</strong></div><div class="featured"><small>Preço sugerido</small><strong>R$ 32,90</strong></div><div><small>Margem</small><strong>38%</strong></div></div>
+            <div class="sheet-table"><div class="table-row table-head"><span>Componente</span><span>Qtd.</span><span>Custo</span></div><div class="table-row"><span>Ingredientes</span><span>1 receita</span><b>R$ 12,80</b></div><div class="table-row"><span>Embalagem</span><span>1 un.</span><b>R$ 2,60</b></div><div class="table-row"><span>Custos indiretos</span><span>rateio</span><b>R$ 3,00</b></div></div>
+            <div class="sheet-callout"><span>Ponto de equilíbrio</span><strong>42 unidades/mês</strong></div>
+          </div>
+          <div class="product-copy">
+            <div class="product-heading"><span class="product-index">01</span><span class="product-category">PRECIFICAÇÃO</span></div>
+            <h3>NexoPlan Precifica</h3>
+            <p class="product-promise">Descubra quanto seu produto realmente custa e quanto precisa cobrar para trabalhar com margem.</p>
+            <p>Ideal para confeiteiros, doceiros, salgadeiros, produtores de alimentos, MEIs e pequenos negócios que ainda definem preços no improviso ou copiando concorrentes.</p>
+            <ul class="feature-list"><li>Ingredientes, materiais e atualização de custos</li><li>Receitas, rendimento e composição de produtos</li><li>Custos fixos, margem e ponto de equilíbrio</li><li>Dashboard, metas e análise de rentabilidade</li></ul>
+            <div class="product-actions"><a class="button button-primary" href="https://pay.hotmart.com/B107154291R">Comprar na Hotmart <span aria-hidden="true">↗</span></a><button class="detail-button" type="button" data-detail="precifica">Ver tudo que está incluído</button></div>
+            <small class="purchase-note">Compra e entrega processadas com segurança pela Hotmart.</small>
+          </div>
+        </article>
 
-          <article class="product-card financeiro reveal delay-1" data-product="financeiro">
-            <div class="product-cover" aria-label="NexoPlan Gestão Financeira">
-              <div class="cover-topline"><span class="cover-mark">N</span><span>NexoPlan</span></div>
-              <div class="cover-copy">
-                <small>CONTROLE FINANCEIRO</small>
-                <h3>Gestão<br>Financeira</h3>
-                <p>Organize o caixa e acompanhe o que entra, sai e sobra no seu negócio.</p>
-              </div>
-              <div class="cover-art finance-art" aria-hidden="true">
-                <div class="chart-bars"><i></i><i></i><i></i><i></i></div>
-                <div class="trend-line"></div>
-                <div class="finance-badge"><span>Saldo do mês</span><strong>+ R$ 5.200</strong></div>
-              </div>
-              <div class="cover-tagline">Precifique. Planeje. Lucre.</div>
-            </div>
-            <div class="product-body">
-              <div class="product-meta"><span class="product-number">02</span><span class="product-type">FINANCEIRO</span></div>
-              <h3>NexoPlan Gestão Financeira</h3>
-              <p class="product-lead">Para quem vende, recebe, paga contas e ainda não enxerga com clareza o resultado do mês.</p>
-              <ul>
-                <li>Receitas e despesas organizadas</li>
-                <li>Visão mensal de resultados</li>
-                <li>Metas e compromissos financeiros</li>
-                <li>Dashboard para decisões rápidas</li>
-              </ul>
-              <div class="product-actions">
-                <button class="button button-primary purchase-button" data-buy="financeiro" type="button">Em breve</button>
-                <button class="text-button detail-button" data-detail="financeiro" type="button">Ver detalhes <span>→</span></button>
-              </div>
-            </div>
-          </article>
+        <article class="product-showcase reverse reveal" data-product="financeiro">
+          <div class="sheet-preview preview-finance" aria-label="Prévia da planilha NexoPlan Gestão Financeira">
+            <div class="sheet-toolbar"><span class="sheet-logo">N</span><b>Resumo financeiro</b><span class="sheet-tab">Agosto</span></div>
+            <div class="sheet-metrics"><div><small>Receitas</small><strong>R$ 12.480</strong></div><div><small>Despesas</small><strong>R$ 7.240</strong></div><div class="featured"><small>Resultado</small><strong>R$ 5.240</strong></div></div>
+            <div class="finance-visual"><div class="finance-bars"><i style="--h:52%"></i><i style="--h:66%"></i><i style="--h:61%"></i><i style="--h:79%"></i><i style="--h:92%"></i></div><div class="finance-summary"><span><i class="status paid"></i>Contas recebidas <b>18</b></span><span><i class="status pending"></i>A vencer <b>4</b></span><span><i class="status alert"></i>Em atraso <b>1</b></span></div></div>
+            <div class="sheet-callout"><span>Orçamento utilizado</span><strong>64%</strong></div>
+          </div>
+          <div class="product-copy">
+            <div class="product-heading"><span class="product-index">02</span><span class="product-category">CONTROLE FINANCEIRO</span></div>
+            <h3>NexoPlan Gestão Financeira</h3>
+            <p class="product-promise">Tenha uma visão clara do que entra, do que sai, dos compromissos e do resultado de cada mês.</p>
+            <p>Para pequenos negócios que já vendem, mas ainda misturam dinheiro pessoal e empresarial, esquecem vencimentos ou confundem faturamento com lucro.</p>
+            <ul class="feature-list"><li>Clientes, categorias e movimentações organizadas</li><li>Contas a receber e contas a pagar</li><li>Orçamento, conferência e visão mensal</li><li>Dashboard para acompanhar resultados</li></ul>
+            <div class="product-actions"><a class="button button-primary" href="https://pay.hotmart.com/U107329608Y">Comprar na Hotmart <span aria-hidden="true">↗</span></a><button class="detail-button" type="button" data-detail="financeiro">Ver tudo que está incluído</button></div>
+            <small class="purchase-note">Compra e entrega processadas com segurança pela Hotmart.</small>
+          </div>
+        </article>
 
-          <article class="product-card negocio reveal delay-2" data-product="negocio">
-            <div class="recommended">MAIS COMPLETO</div>
-            <div class="product-cover" aria-label="NexoPlan Negócio 360">
-              <div class="cover-topline"><span class="cover-mark">N</span><span>NexoPlan</span></div>
-              <div class="cover-copy">
-                <small>GESTÃO DO NEGÓCIO</small>
-                <h3>Negócio<br>360</h3>
-                <p>Centralize operação, vendas, clientes, estoque e indicadores em uma visão única.</p>
-              </div>
-              <div class="cover-art business-art" aria-hidden="true">
-                <div class="orbit orbit-one"></div>
-                <div class="orbit orbit-two"></div>
-                <div class="business-core">360°</div>
-                <span class="node node-a">Vendas</span>
-                <span class="node node-b">Estoque</span>
-                <span class="node node-c">Clientes</span>
-              </div>
-              <div class="cover-tagline">Precifique. Planeje. Lucre.</div>
-            </div>
-            <div class="product-body">
-              <div class="product-meta"><span class="product-number">03</span><span class="product-type">GESTÃO 360°</span></div>
-              <h3>NexoPlan Negócio 360</h3>
-              <p class="product-lead">Para quem já precisa sair de controles separados e enxergar o negócio como um sistema.</p>
-              <ul>
-                <li>Pedidos, vendas e clientes</li>
-                <li>Produtos, fornecedores e estoque</li>
-                <li>Metas e acompanhamento operacional</li>
-                <li>Visão integrada para decisões</li>
-              </ul>
-              <div class="product-actions">
-                <button class="button button-primary purchase-button" data-buy="negocio" type="button">Em breve</button>
-                <button class="text-button detail-button" data-detail="negocio" type="button">Ver detalhes <span>→</span></button>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-shell fit-section" id="como-funciona">
-      <div class="fit-panel reveal">
-        <div class="fit-copy">
-          <span class="eyebrow">NÃO SABE QUAL ESCOLHER?</span>
-          <h2>Pense no problema que você quer resolver primeiro.</h2>
-          <p>A solução mais completa nem sempre é a melhor para começar. A NexoPlan foi pensada para crescer junto com a maturidade do seu negócio.</p>
-        </div>
-        <div class="fit-options">
-          <a href="#solucoes" data-focus-product="precifica"><span>Meu problema é preço e margem</span><strong>Precifica →</strong></a>
-          <a href="#solucoes" data-focus-product="financeiro"><span>Meu problema é controlar o dinheiro</span><strong>Gestão Financeira →</strong></a>
-          <a href="#solucoes" data-focus-product="negocio"><span>Meu problema é organizar a operação inteira</span><strong>Negócio 360 →</strong></a>
-        </div>
+        <article class="product-showcase reveal" data-product="negocio">
+          <span class="recommended">MAIS COMPLETO</span>
+          <div class="sheet-preview preview-business" aria-label="Prévia da planilha NexoPlan Negócio 360">
+            <div class="sheet-toolbar"><span class="sheet-logo">N</span><b>Visão geral do negócio</b><span class="sheet-tab">360°</span></div>
+            <div class="sheet-metrics"><div><small>Pedidos</small><strong>47</strong></div><div><small>Faturamento</small><strong>R$ 18,6 mil</strong></div><div class="featured"><small>Meta</small><strong>82%</strong></div></div>
+            <div class="business-grid"><div><span>Estoque</span><strong>8 itens para repor</strong><i class="progress"><b style="--w:74%"></b></i></div><div><span>Clientes ativos</span><strong>38 de 52</strong><i class="progress"><b style="--w:61%"></b></i></div><div><span>Pedidos concluídos</span><strong>41 de 47</strong><i class="progress"><b style="--w:87%"></b></i></div></div>
+            <div class="sheet-callout"><span>Cenário projetado</span><strong>Meta alcançada em 9 dias</strong></div>
+          </div>
+          <div class="product-copy">
+            <div class="product-heading"><span class="product-index">03</span><span class="product-category">GESTÃO INTEGRADA</span></div>
+            <h3>NexoPlan Negócio 360</h3>
+            <p class="product-promise">Enxergue o que vende, quem compra, o que precisa ser reposto e se a operação está no ritmo das metas.</p>
+            <p>Para negócios que cresceram além de controles separados e precisam reunir operação, relacionamento e planejamento em uma visão única.</p>
+            <ul class="feature-list"><li>Produtos, clientes, fornecedores, pedidos e compras</li><li>Estoque com ajustes e alertas de reposição</li><li>Metas, cenários, relatórios e verificações</li><li>Estrutura para até 150 produtos, 200 clientes e 300 pedidos</li></ul>
+            <div class="product-actions"><a class="button button-primary" href="https://pay.hotmart.com/X107329706V">Comprar na Hotmart <span aria-hidden="true">↗</span></a><button class="detail-button" type="button" data-detail="negocio">Ver tudo que está incluído</button></div>
+            <small class="purchase-note">Compra e entrega processadas com segurança pela Hotmart.</small>
+          </div>
+        </article>
       </div>
     </section>
 
     <section class="comparison-section" id="comparativo">
       <div class="section-shell">
-        <div class="section-heading reveal">
-          <span class="eyebrow">COMPARATIVO RÁPIDO</span>
-          <h2>Três soluções. Três níveis de decisão.</h2>
-        </div>
-        <div class="comparison-table reveal" role="table" aria-label="Comparativo dos produtos">
-          <div class="comparison-row comparison-head" role="row">
-            <span role="columnheader">Recurso</span><span role="columnheader">Precifica</span><span role="columnheader">Financeira</span><span role="columnheader">Negócio 360</span>
-          </div>
-          <div class="comparison-row" role="row"><span>Precificação e margem</span><b>✓</b><b>—</b><b>✓</b></div>
-          <div class="comparison-row" role="row"><span>Receitas e despesas</span><b>—</b><b>✓</b><b>✓</b></div>
-          <div class="comparison-row" role="row"><span>Dashboard de indicadores</span><b>✓</b><b>✓</b><b>✓</b></div>
-          <div class="comparison-row" role="row"><span>Clientes e fornecedores</span><b>—</b><b>—</b><b>✓</b></div>
-          <div class="comparison-row" role="row"><span>Pedidos e estoque</span><b>—</b><b>—</b><b>✓</b></div>
-          <div class="comparison-row" role="row"><span>Indicado para começar</span><b>Preço</b><b>Caixa</b><b>Operação</b></div>
+        <div class="section-heading reveal"><span class="eyebrow">COMPARATIVO RÁPIDO</span><h2>Qual resolve seu problema agora?</h2></div>
+        <div class="comparison-cards reveal">
+          <article><span>Se você não sabe quanto cobrar</span><h3>Comece pelo Precifica</h3><p>O foco é custo, rendimento, margem e preço de venda.</p><a href="#solucoes" data-focus-product="precifica">Ver Precifica →</a></article>
+          <article><span>Se você não sabe quanto sobra</span><h3>Escolha Gestão Financeira</h3><p>O foco é caixa, contas, orçamento e resultado mensal.</p><a href="#solucoes" data-focus-product="financeiro">Ver Gestão Financeira →</a></article>
+          <article><span>Se tudo está espalhado</span><h3>Vá de Negócio 360</h3><p>O foco é integrar vendas, clientes, estoque e metas.</p><a href="#solucoes" data-focus-product="negocio">Ver Negócio 360 →</a></article>
         </div>
       </div>
     </section>
 
-    <section class="manifesto section-shell reveal">
-      <div class="manifesto-mark">N</div>
-      <div>
-        <span class="eyebrow">NEXOPLAN</span>
-        <h2>Não é sobre preencher planilhas.<br>É sobre saber o que fazer a seguir.</h2>
-        <p>A NexoPlan transforma informações do dia a dia em clareza para decidir preço, controlar dinheiro e organizar o crescimento.</p>
-      </div>
-    </section>
+    <section class="manifesto section-shell reveal"><img src="assets/nexoplan-icon.png" alt="" width="130" height="130"><div><span class="eyebrow">NEXOPLAN</span><h2>Não é sobre preencher planilhas.<br>É sobre saber o que fazer a seguir.</h2><p>A NexoPlan transforma informações do dia a dia em clareza para precificar, controlar e planejar o crescimento do seu negócio.</p></div></section>
 
-    <section class="section-shell faq-section" id="faq">
-      <div class="section-heading reveal">
-        <span class="eyebrow">DÚVIDAS FREQUENTES</span>
-        <h2>Antes de escolher sua solução.</h2>
-      </div>
+    <section class="section-shell faq-section" id="duvidas">
+      <div class="section-heading reveal"><span class="eyebrow">DÚVIDAS FREQUENTES</span><h2>Antes de escolher.</h2></div>
       <div class="faq-list">
-        <details class="reveal">
-          <summary>Os produtos são indicados para quem está começando?</summary>
-          <p>Sim. A proposta da NexoPlan é simplificar conceitos de gestão e transformar dados básicos do negócio em decisões práticas, sem exigir conhecimento avançado de finanças.</p>
-        </details>
-        <details class="reveal">
-          <summary>Preciso comprar os três produtos?</summary>
-          <p>Não. Cada solução resolve um estágio diferente. Você pode começar pelo problema mais urgente e evoluir para outras ferramentas conforme a necessidade.</p>
-        </details>
-        <details class="reveal">
-          <summary>Os arquivos são editáveis?</summary>
-          <p>Sim. Os produtos foram pensados para serem usados e ajustados dentro da realidade de pequenos negócios, seguindo as instruções do material de apoio de cada solução.</p>
-        </details>
-        <details class="reveal">
-          <summary>Como recebo o produto depois da compra?</summary>
-          <p>A entrega será feita pela Hotmart. Assim que os links finais forem conectados ao site, cada botão levará diretamente ao checkout correspondente.</p>
-        </details>
+        <details class="reveal"><summary>Preciso entender de finanças ou Excel?</summary><p>Não. As soluções foram organizadas para pequenos negócios e incluem material de apoio. Você preenche os dados indicados e acompanha os cálculos e resultados nas áreas próprias da ferramenta.</p></details>
+        <details class="reveal"><summary>Preciso comprar os três produtos?</summary><p>Não. Cada solução resolve um problema diferente. Comece pelo gargalo mais urgente e evolua quando o seu negócio exigir mais controle.</p></details>
+        <details class="reveal"><summary>Posso editar os arquivos?</summary><p>Sim. As planilhas são editáveis e foram preparadas para adaptação à rotina do negócio. Para preservar fórmulas, validações e gráficos, o uso no Microsoft Excel oferece a melhor compatibilidade.</p></details>
+        <details class="reveal"><summary>Como recebo o produto?</summary><p>A compra e a entrega são realizadas pela Hotmart. Após a confirmação do pagamento, você recebe o acesso ao produto e ao material de apoio correspondente.</p></details>
       </div>
     </section>
 
-    <section class="final-cta section-shell reveal">
-      <span class="eyebrow">COMECE PELO QUE MAIS IMPORTA</span>
-      <h2>Seu negócio não precisa de mais improviso.</h2>
-      <p>Escolha a solução que resolve seu principal gargalo hoje e construa uma gestão mais clara a partir daí.</p>
-      <a class="button button-primary" href="#solucoes">Ver as soluções</a>
-    </section>
+    <section class="final-cta section-shell reveal"><span class="eyebrow">COMECE PELO PRINCIPAL GARGALO</span><h2>Troque o improviso por decisões mais claras.</h2><p>Escolha a solução que faz sentido para o momento do seu negócio.</p><a class="button button-primary" href="#solucoes">Conhecer as soluções <span aria-hidden="true">→</span></a></section>
   </main>
 
   <footer class="site-footer">
-    <div class="footer-brand">
-      <div class="brand"><span class="brand-mark">N</span><span class="brand-name">NexoPlan</span></div>
-      <p>Precifique. Planeje. Lucre.</p>
-    </div>
-    <div class="footer-links">
-      <a href="#solucoes">Produtos</a>
-      <a href="#comparativo">Comparativo</a>
-      <a href="#faq">Dúvidas</a>
-    </div>
+    <div class="footer-brand"><a class="brand brand-stacked" href="#topo"><img src="assets/nexoplan-logo.png" alt="NexoPlan" width="180" height="126"></a><p>Precifique. Planeje. Lucre.</p></div>
+    <nav class="footer-links" aria-label="Navegação do rodapé"><a href="#solucoes">Produtos</a><a href="#comparativo">Comparativo</a><a href="#duvidas">Dúvidas</a></nav>
     <p class="copyright">© <span id="current-year"></span> NexoPlan. Todos os direitos reservados.</p>
   </footer>
 
   <div class="modal-backdrop" id="product-modal" aria-hidden="true">
-    <div class="product-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-      <button class="modal-close" type="button" aria-label="Fechar">×</button>
-      <span class="eyebrow" id="modal-kicker"></span>
-      <h2 id="modal-title"></h2>
-      <p id="modal-description"></p>
-      <div class="modal-columns">
-        <div><h3>Ideal para</h3><p id="modal-ideal"></p></div>
-        <div><h3>Resultado esperado</h3><p id="modal-result"></p></div>
-      </div>
-      <ul id="modal-features"></ul>
-      <button class="button button-primary modal-buy" type="button">Em breve</button>
+    <div class="product-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1">
+      <button class="modal-close" type="button" aria-label="Fechar detalhes">×</button>
+      <span class="eyebrow" id="modal-kicker"></span><h2 id="modal-title"></h2><p id="modal-description"></p>
+      <div class="modal-columns"><div><h3>Ideal para</h3><p id="modal-ideal"></p></div><div><h3>O que você passa a enxergar</h3><p id="modal-result"></p></div></div>
+      <h3 class="included-title">O que está incluído</h3><ul id="modal-features"></ul>
+      <a class="button button-primary modal-buy" href="#">Comprar na Hotmart <span aria-hidden="true">↗</span></a>
     </div>
   </div>
-
   <script src="script.js"></script>
 </body>
 </html>
