@@ -1,0 +1,209 @@
+/* NexoPlan visual refinements — cleaner product covers and stronger hierarchy */
+
+/* Product cards: more breathing room, less visual noise */
+.products-grid {
+  gap: 26px;
+}
+
+.product-card {
+  background: linear-gradient(180deg, #0f1f17 0%, #0b1811 100%);
+}
+
+.product-cover {
+  aspect-ratio: 1.02;
+  padding: 28px;
+  isolation: isolate;
+}
+
+.product-cover::after {
+  content: "";
+  position: absolute;
+  width: 230px;
+  height: 230px;
+  right: -88px;
+  bottom: -78px;
+  border-radius: 50%;
+  background: rgba(47, 130, 84, .08);
+  z-index: -1;
+}
+
+.cover-topline {
+  font-size: .78rem;
+  opacity: .9;
+}
+
+.cover-copy {
+  margin-top: 46px;
+  max-width: 76%;
+}
+
+.cover-copy small {
+  font-size: .58rem;
+  letter-spacing: .14em;
+}
+
+.cover-copy h3 {
+  margin-top: 12px;
+  margin-bottom: 0;
+  font-size: clamp(2.45rem, 3.4vw, 3.65rem);
+}
+
+/* The description repeated information already present in the card body.
+   Hiding it makes the cover read like premium packaging instead of a mini brochure. */
+.cover-copy p {
+  display: none;
+}
+
+.cover-tagline {
+  left: 28px;
+  bottom: 24px;
+  font-size: .62rem;
+  letter-spacing: .02em;
+  opacity: .8;
+}
+
+/* Keep only one strong visual cue on each cover */
+.cover-art {
+  right: 18px;
+  bottom: 56px;
+  width: 44%;
+  height: 38%;
+  opacity: .96;
+}
+
+/* Precifica */
+.coin-b {
+  display: none;
+}
+
+.coin-a {
+  width: 58px;
+  height: 58px;
+  right: 0;
+  top: -10px;
+  font-size: .82rem;
+}
+
+.calc-panel {
+  width: 138px;
+  padding: 11px 12px;
+  border-radius: 14px;
+}
+
+.calc-panel span:first-of-type,
+.calc-panel strong:first-of-type {
+  display: none;
+}
+
+.calc-panel strong {
+  margin-bottom: 0;
+  font-size: .88rem;
+}
+
+/* Gestão Financeira */
+.trend-line {
+  display: none;
+}
+
+.finance-badge {
+  left: auto;
+  right: 2px;
+  top: -18px;
+  min-width: 116px;
+}
+
+.chart-bars {
+  right: 8px;
+  bottom: 4px;
+  height: 92px;
+  gap: 8px;
+}
+
+.chart-bars i {
+  width: 18px;
+}
+
+/* Negócio 360 */
+.business-art .orbit-two,
+.business-art .node-b,
+.business-art .node-c {
+  display: none;
+}
+
+.business-art .orbit-one {
+  opacity: .65;
+}
+
+.business-art .node-a {
+  font-size: .58rem;
+}
+
+.business-core {
+  box-shadow: 0 14px 30px rgba(25, 83, 50, .16);
+}
+
+/* Cleaner body hierarchy */
+.product-body {
+  padding-top: 28px;
+}
+
+.product-body > h3 {
+  margin-bottom: 10px;
+}
+
+.product-lead {
+  color: #aebdb3;
+}
+
+.product-body ul {
+  margin-top: 22px;
+}
+
+.product-actions {
+  margin-top: 26px;
+}
+
+.purchase-button {
+  min-height: 48px;
+}
+
+/* Small polish to hero so products remain the focus */
+.hero-card-main::after {
+  opacity: .72;
+}
+
+.floating-chip {
+  box-shadow: 0 12px 28px rgba(0,0,0,.18);
+}
+
+@media (max-width: 980px) {
+  .product-cover {
+    aspect-ratio: 1.22;
+  }
+
+  .cover-copy {
+    max-width: 68%;
+  }
+
+  .cover-art {
+    width: 36%;
+    right: 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  .product-cover {
+    min-height: 350px;
+    aspect-ratio: auto;
+  }
+
+  .cover-copy {
+    max-width: 82%;
+  }
+
+  .cover-art {
+    width: 40%;
+    right: 18px;
+    bottom: 58px;
+  }
+}
