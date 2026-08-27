@@ -2,7 +2,8 @@ const productDetails = {
   precifica: {
     kicker: "PRECIFICAÇÃO",
     title: "NexoPlan Precifica",
-    url: "https://pay.hotmart.com/B107154291R",
+    url: "https://pay.hotmart.com/B107154291R?off=lxihr5tx",
+    regularUrl: "https://pay.hotmart.com/B107154291R",
     description: "Uma solução prática para transformar custos reais em preço de venda, com visão de margem, ponto de equilíbrio e metas.",
     ideal: "Confeiteiros, doceiros, salgadeiros, produtores de alimentos, MEIs e pequenos negócios que ainda precificam no improviso.",
     result: "O custo real de cada produto, a margem obtida, o preço sugerido e quanto precisa ser vendido para cobrir os custos.",
@@ -11,7 +12,8 @@ const productDetails = {
   financeiro: {
     kicker: "CONTROLE FINANCEIRO",
     title: "NexoPlan Gestão Financeira",
-    url: "https://pay.hotmart.com/U107329608Y",
+    url: "https://pay.hotmart.com/U107329608Y?off=amuz3gem",
+    regularUrl: "https://pay.hotmart.com/U107329608Y",
     description: "Organize a rotina financeira, acompanhe compromissos e entenda o resultado do mês sem se perder em lançamentos espalhados.",
     ideal: "Pequenos negócios que já vendem, mas misturam informações, esquecem vencimentos ou não sabem quanto realmente sobra.",
     result: "Receitas, despesas, contas, orçamento e resultado mensal reunidos em uma visão objetiva.",
@@ -20,13 +22,66 @@ const productDetails = {
   negocio: {
     kicker: "GESTÃO INTEGRADA",
     title: "NexoPlan Negócio 360",
-    url: "https://pay.hotmart.com/X107329706V",
+    url: "https://pay.hotmart.com/X107329706V?off=kjiwmiq4",
+    regularUrl: "https://pay.hotmart.com/X107329706V",
     description: "A solução mais completa para reunir produtos, clientes, fornecedores, pedidos, compras, estoque, metas e indicadores.",
     ideal: "Negócios que cresceram além de controles separados e precisam reduzir informações perdidas e decisões sem contexto.",
     result: "O que vende, quem compra, o que precisa ser reposto e se a operação está avançando no ritmo das metas.",
     features: ["Até 150 produtos e 200 clientes", "Fornecedores, pedidos e compras", "Até 500 itens de pedido", "Ajustes e acompanhamento de estoque", "Metas e cenários", "Dashboard, relatórios e verificações", "Material de apoio para uso"]
   }
 };
+
+const campaignDeadline = new Date("2026-09-26T23:59:00-03:00");
+
+function campaignIsActive() {
+  return Date.now() < campaignDeadline.getTime();
+}
+
+function syncCampaignLinks(active) {
+  document.querySelectorAll("[data-promotional-link]").forEach((link) => {
+    const product = productDetails[link.dataset.productKey];
+    if (!product) return;
+    link.href = active ? product.url : product.regularUrl;
+    link.textContent = active ? "Comprar com a oferta ↗" : "Comprar na Hotmart ↗";
+  });
+
+  document.querySelectorAll("[data-offer-label]").forEach((label) => {
+    label.textContent = active ? "OFERTA DE LANÇAMENTO" : "OFERTA ENCERRADA";
+    label.classList.toggle("expired", !active);
+  });
+}
+
+function updateCountdown() {
+  const countdowns = document.querySelectorAll("[data-countdown]");
+  if (!countdowns.length) return;
+
+  const remaining = Math.max(0, campaignDeadline.getTime() - Date.now());
+  const active = remaining > 0;
+  const days = Math.floor(remaining / 86400000);
+  const hours = Math.floor((remaining % 86400000) / 3600000);
+  const minutes = Math.floor((remaining % 3600000) / 60000);
+  const seconds = Math.floor((remaining % 60000) / 1000);
+  const pad = (value) => String(value).padStart(2, "0");
+
+  countdowns.forEach((countdown) => {
+    countdown.querySelector("[data-days]").textContent = String(days).padStart(2, "0");
+    countdown.querySelector("[data-hours]").textContent = pad(hours);
+    countdown.querySelector("[data-minutes]").textContent = pad(minutes);
+    countdown.querySelector("[data-seconds]").textContent = pad(seconds);
+    countdown.setAttribute("aria-label", active ? `${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos restantes` : "Oferta de lançamento encerrada");
+  });
+
+  document.querySelectorAll("[data-campaign]").forEach((campaign) => {
+    campaign.classList.toggle("expired", !active);
+    const copy = campaign.querySelector(".campaign-copy p");
+    if (copy && !active) copy.textContent = "A campanha de lançamento foi encerrada. Os produtos continuam disponíveis pelo preço normal.";
+  });
+
+  syncCampaignLinks(active);
+}
+
+updateCountdown();
+window.setInterval(updateCountdown, 1000);
 
 const header = document.querySelector(".site-header");
 const menuButton = document.querySelector(".menu-button");
@@ -97,7 +152,7 @@ function openModal(key, trigger) {
     item.textContent = feature;
     return item;
   }));
-  modalBuy.href = product.url;
+  modalBuy.href = campaignIsActive() ? product.url : product.regularUrl;
   modalBackdrop.classList.add("open");
   modalBackdrop.setAttribute("aria-hidden", "false");
   document.body.classList.add("modal-open");
