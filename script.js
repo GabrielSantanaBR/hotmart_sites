@@ -54,7 +54,9 @@ function syncCampaignLinks(active) {
     const product = productDetails[link.dataset.productKey];
     if (!product) return;
     link.href = active ? product.url : product.regularUrl;
-    link.textContent = active ? "Comprar com a oferta ↗" : "Comprar na Hotmart ↗";
+    link.textContent = active
+      ? (link.dataset.activeLabel || "Comprar com a oferta ↗")
+      : (link.dataset.expiredLabel || "Comprar na Hotmart ↗");
   });
 
   document.querySelectorAll("[data-offer-label]").forEach((label) => {
@@ -155,6 +157,8 @@ function showRecommendation(key) {
   pageLink.setAttribute("aria-label", `Conhecer ${product.title}`);
   buyLink.dataset.promotionalLink = "";
   buyLink.dataset.productKey = key;
+  buyLink.dataset.activeLabel = "Ver oferta de lançamento ↗";
+  buyLink.dataset.expiredLabel = "Comprar na Hotmart ↗";
   buyLink.href = campaignIsActive() ? product.url : product.regularUrl;
   buyLink.textContent = campaignIsActive() ? "Ver oferta de lançamento ↗" : "Comprar na Hotmart ↗";
 
