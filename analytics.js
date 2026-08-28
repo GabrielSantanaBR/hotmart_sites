@@ -168,12 +168,14 @@
     document.querySelectorAll("[data-campaign]").forEach((promotion, index) => {
       const viewKey = `promotion:${index}`;
       if (trackedViews.has(viewKey)) return;
-      const item = itemFor(productKey || "conjunto");
+      const promotionItems = productKey
+        ? [itemFor(productKey)].filter(Boolean)
+        : Object.keys(products).map(itemFor).filter(Boolean);
       if (track("view_promotion", {
         promotion_id: config.campaignId,
         promotion_name: config.campaignName,
         creative_slot: locationName(promotion),
-        items: item ? [item] : []
+        items: promotionItems
       })) trackedViews.add(viewKey);
     });
 
