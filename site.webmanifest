@@ -1,0 +1,20 @@
+{
+  "name": "NexoPlan",
+  "short_name": "NexoPlan",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#07110c",
+  "theme_color": "#07110c",
+  "icons": [
+    {
+      "src": "assets/nexoplan-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/nexoplan-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
