@@ -2,6 +2,10 @@ const productDetails = {
   precifica: {
     kicker: "PRECIFICAÇÃO",
     title: "NexoPlan Precifica",
+    index: "01",
+    page: "precifica/",
+    finderDescription: "A melhor escolha para calcular custos, definir margem e chegar a um preço de venda sustentável.",
+    benefit: "Saber quanto cada produto custa e quanto cobrar para trabalhar com margem.",
     url: "https://pay.hotmart.com/B107154291R?off=lxihr5tx",
     regularUrl: "https://pay.hotmart.com/B107154291R",
     description: "Uma solução prática para transformar custos reais em preço de venda, com visão de margem, ponto de equilíbrio e metas.",
@@ -12,6 +16,10 @@ const productDetails = {
   financeiro: {
     kicker: "CONTROLE FINANCEIRO",
     title: "NexoPlan Gestão Financeira",
+    index: "02",
+    page: "gestao-financeira/",
+    finderDescription: "A solução indicada para organizar entradas, saídas, contas e acompanhar o resultado real de cada mês.",
+    benefit: "Entender para onde o dinheiro vai e quanto realmente sobra no negócio.",
     url: "https://pay.hotmart.com/U107329608Y?off=amuz3gem",
     regularUrl: "https://pay.hotmart.com/U107329608Y",
     description: "Organize a rotina financeira, acompanhe compromissos e entenda o resultado do mês sem se perder em lançamentos espalhados.",
@@ -22,6 +30,10 @@ const productDetails = {
   negocio: {
     kicker: "GESTÃO INTEGRADA",
     title: "NexoPlan Negócio 360",
+    index: "03",
+    page: "negocio/",
+    finderDescription: "A solução mais completa para centralizar produtos, clientes, fornecedores, pedidos, compras, estoque e metas.",
+    benefit: "Enxergar a operação inteira e reduzir informações perdidas em controles separados.",
     url: "https://pay.hotmart.com/X107329706V?off=kjiwmiq4",
     regularUrl: "https://pay.hotmart.com/X107329706V",
     description: "A solução mais completa para reunir produtos, clientes, fornecedores, pedidos, compras, estoque, metas e indicadores.",
@@ -117,6 +129,46 @@ if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-mot
 } else {
   revealElements.forEach((element) => element.classList.add("visible"));
 }
+
+const finderButtons = document.querySelectorAll("[data-recommend]");
+const finderResult = document.getElementById("finder-result");
+
+function showRecommendation(key) {
+  const product = productDetails[key];
+  if (!product || !finderResult) return;
+
+  finderButtons.forEach((button) => {
+    const selected = button.dataset.recommend === key;
+    button.classList.toggle("active", selected);
+    button.setAttribute("aria-pressed", String(selected));
+  });
+
+  finderResult.querySelector("[data-result-index]").textContent = product.index;
+  finderResult.querySelector("[data-result-kicker]").textContent = product.kicker;
+  finderResult.querySelector("[data-result-title]").textContent = product.title;
+  finderResult.querySelector("[data-result-description]").textContent = product.finderDescription;
+  finderResult.querySelector("[data-result-benefit]").textContent = product.benefit;
+
+  const pageLink = finderResult.querySelector("[data-result-page]");
+  const buyLink = finderResult.querySelector("[data-result-buy]");
+  pageLink.href = product.page;
+  pageLink.setAttribute("aria-label", `Conhecer ${product.title}`);
+  buyLink.dataset.promotionalLink = "";
+  buyLink.dataset.productKey = key;
+  buyLink.href = campaignIsActive() ? product.url : product.regularUrl;
+  buyLink.textContent = campaignIsActive() ? "Ver oferta de lançamento ↗" : "Comprar na Hotmart ↗";
+
+  finderResult.classList.remove("is-empty");
+  finderResult.dataset.recommendation = key;
+
+  if (window.innerWidth <= 720) {
+    window.setTimeout(() => finderResult.scrollIntoView({ behavior: "smooth", block: "center" }), 120);
+  }
+}
+
+finderButtons.forEach((button) => {
+  button.addEventListener("click", () => showRecommendation(button.dataset.recommend));
+});
 
 document.querySelectorAll("[data-focus-product]").forEach((link) => {
   link.addEventListener("click", () => {
