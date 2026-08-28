@@ -15,7 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body data-page-type="home">
   <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
   <div class="ambient ambient-one" aria-hidden="true"></div>
   <div class="ambient ambient-two" aria-hidden="true"></div>
@@ -48,7 +48,7 @@
         <span class="eyebrow">GESTÃO SIMPLES PARA NEGÓCIOS REAIS</span>
         <h1>Decida com números.<br><span>Cresça com clareza.</span></h1>
         <p class="hero-text">Ferramentas práticas para você descobrir quanto cobrar, controlar o dinheiro e organizar a operação sem depender de controles confusos.</p>
-        <div class="hero-actions"><a class="button button-primary" href="#encontre-sua-solucao">Descobrir a solução ideal <span aria-hidden="true">→</span></a><a class="button button-ghost" href="#solucoes">Ver os três produtos</a></div>
+        <div class="hero-actions"><a class="button button-primary" href="#encontre-sua-solucao">Descobrir a solução ideal <span aria-hidden="true">→</span></a><a class="button button-ghost" href="#solucoes">Ver todas as soluções</a></div>
         <ul class="trust-row" aria-label="Benefícios dos produtos"><li><i></i> Uso simples</li><li><i></i> Material de apoio</li><li><i></i> Acesso pela Hotmart</li></ul>
       </div>
       <div class="hero-dashboard reveal delay-1" aria-label="Exemplo de painel NexoPlan">
@@ -79,6 +79,9 @@
             <button class="finder-option reveal delay-2" type="button" data-recommend="negocio" aria-pressed="false">
               <span class="finder-number">03</span><span class="finder-option-copy"><small>OPERAÇÃO COMPLETA</small><strong>Perdi o controle da organização</strong><em>Produtos, pedidos, estoque, clientes e metas estão espalhados.</em></span><span class="finder-arrow" aria-hidden="true">→</span>
             </button>
+            <button class="finder-option finder-option-bundle reveal" type="button" data-recommend="conjunto" aria-pressed="false">
+              <span class="finder-number">04</span><span class="finder-option-copy"><small>ECOSSISTEMA COMPLETO</small><strong>Quero as três soluções</strong><em>Preciso organizar preço, finanças e operação sem escolher apenas uma área.</em></span><span class="finder-arrow" aria-hidden="true">→</span>
+            </button>
           </div>
           <aside class="finder-result is-empty reveal" id="finder-result" aria-live="polite">
             <div class="finder-result-top"><span data-result-index>?</span><small data-result-kicker>SUA RECOMENDAÇÃO</small></div>
@@ -91,7 +94,7 @@
             </div>
           </aside>
         </div>
-        <p class="finder-note">Se você se identificou com mais de uma situação, comece pelo problema que mais afeta suas decisões hoje.</p>
+        <p class="finder-note">Se você se identificou com mais de uma situação, o Conjunto Completo reúne as três ferramentas com melhor custo-benefício.</p>
       </div>
     </section>
 
@@ -102,6 +105,7 @@
         <a class="journey-step reveal delay-1" href="gestao-financeira/"><span>02 · CONTROLAR</span><h3>Gestão Financeira</h3><p>Para quem já vende, mas precisa acompanhar entradas, saídas, contas e resultado mensal.</p><b>Conhecer Gestão Financeira →</b></a>
         <a class="journey-step reveal delay-2" href="negocio/"><span>03 · GERIR</span><h3>Negócio 360</h3><p>Para quem precisa conectar produtos, pedidos, clientes, estoque, fornecedores e metas.</p><b>Conhecer o Negócio 360 →</b></a>
       </div>
+      <a class="bundle-path reveal" href="conjunto/"><span><small>QUER COMEÇAR COM TUDO?</small><strong>Leve as três soluções no Conjunto Completo</strong></span><p>Precificação, controle financeiro e gestão integrada em uma única compra.</p><b>Conhecer o conjunto →</b></a>
     </section>
 
     <section class="solutions" id="solucoes">
@@ -165,6 +169,29 @@
             <small class="purchase-note">Compra e entrega processadas com segurança pela Hotmart.</small>
           </div>
         </article>
+
+        <article class="product-showcase reverse bundle-showcase reveal" data-product="conjunto">
+          <span class="recommended bundle-recommended">MELHOR CUSTO-BENEFÍCIO</span>
+          <div class="sheet-preview preview-bundle" aria-label="Prévia do NexoPlan Conjunto Completo">
+            <div class="sheet-toolbar"><span class="sheet-logo">N</span><b>Ecossistema NexoPlan</b><span class="sheet-tab">3 soluções</span></div>
+            <div class="bundle-stack">
+              <div><span>01</span><p><small>PRECIFICA</small><strong>Custos, margem e preço</strong></p><i>INCLUÍDO</i></div>
+              <div><span>02</span><p><small>GESTÃO FINANCEIRA</small><strong>Entradas, saídas e resultado</strong></p><i>INCLUÍDO</i></div>
+              <div><span>03</span><p><small>NEGÓCIO 360</small><strong>Operação, estoque e metas</strong></p><i>INCLUÍDO</i></div>
+            </div>
+            <div class="sheet-callout"><span>Ecossistema completo</span><strong>Uma única compra</strong></div>
+          </div>
+          <div class="product-copy">
+            <div class="product-heading"><span class="product-index">04</span><span class="product-category">PACOTE COMPLETO</span></div>
+            <span class="offer-label" data-offer-label>OFERTA DE LANÇAMENTO</span>
+            <h3>NexoPlan Conjunto Completo</h3>
+            <p class="product-promise">Leve as três soluções e organize precificação, finanças e operação com ferramentas complementares.</p><p class="product-fit"><span>ESCOLHA SE</span> você se identificou com mais de um problema ou quer o melhor custo-benefício.</p>
+            <p>O conjunto reúne Precifica, Gestão Financeira e Negócio 360, com os respectivos materiais de apoio, em uma única compra pela Hotmart.</p>
+            <ul class="feature-list"><li>NexoPlan Precifica completo</li><li>NexoPlan Gestão Financeira completo</li><li>NexoPlan Negócio 360 completo</li><li>Os três manuais e acesso pela Hotmart</li></ul>
+            <div class="product-actions"><a class="button button-primary" href="conjunto/">Conhecer o conjunto <span aria-hidden="true">→</span></a><a class="detail-button offer-link" data-promotional-link data-product-key="conjunto" href="https://pay.hotmart.com/E107372949H?off=5rpvl9n9">Comprar com a oferta ↗</a></div>
+            <small class="purchase-note">Compra e entrega processadas com segurança pela Hotmart.</small>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -175,6 +202,7 @@
           <article><span>Se você não sabe quanto cobrar</span><h3>Comece pelo Precifica</h3><p>O foco é custo, rendimento, margem e preço de venda.</p><a href="precifica/">Ver página do Precifica →</a></article>
           <article><span>Se você não sabe quanto sobra</span><h3>Escolha Gestão Financeira</h3><p>O foco é caixa, contas, orçamento e resultado mensal.</p><a href="gestao-financeira/">Ver página da Gestão Financeira →</a></article>
           <article><span>Se tudo está espalhado</span><h3>Vá de Negócio 360</h3><p>O foco é integrar vendas, clientes, estoque e metas.</p><a href="negocio/">Ver página do Negócio 360 →</a></article>
+          <article class="bundle-comparison"><span>Se você precisa de mais de uma área</span><h3>Escolha o Conjunto Completo</h3><p>Receba Precifica, Gestão Financeira e Negócio 360 em uma única compra, com melhor custo-benefício.</p><a href="conjunto/">Ver página do conjunto →</a></article>
         </div>
       </div>
     </section>
@@ -210,6 +238,8 @@
     </div>
   </div>
   <a class="mobile-finder-cta" href="#encontre-sua-solucao">Qual produto é para mim? <span aria-hidden="true">→</span></a>
+  <script src="analytics-config.js"></script>
+  <script src="analytics.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
