@@ -351,7 +351,11 @@ details p { max-width: 780px; margin: 13px 0 0; color: var(--muted); font-size: 
 .final-cta p { margin: 0 auto 27px; color: var(--muted); }
 .site-footer { width: min(1180px, calc(100% - 40px)); margin: 0 auto; padding: 42px 0 55px; display: grid; grid-template-columns: 1fr auto; gap: 26px; align-items: end; border-top: 1px solid var(--line); }
 .brand-stacked img { width: 168px; height: auto; object-fit: contain; }
-.footer-brand p { margin: 8px 0 0; color: var(--muted); font-size: .76rem; }
+.footer-logo { gap: 12px; }
+.footer-logo img { width: 52px; height: 52px; object-fit: contain; }
+.footer-logo span { font-family: "Plus Jakarta Sans", sans-serif; font-size: 1.2rem; color: #64bd70; letter-spacing: -.045em; }
+.footer-logo b { color: #e9f2eb; }
+.footer-brand p { margin: 10px 0 0; color: var(--muted); font-size: .76rem; }
 .footer-links { display: flex; flex-wrap: wrap; gap: 22px; color: var(--muted); font-size: .78rem; }
 .copyright { grid-column: 1 / -1; margin: 0; color: #5c7163; font-size: .68rem; }
 
@@ -368,10 +372,10 @@ details p { max-width: 780px; margin: 13px 0 0; color: var(--muted); font-size: 
 .product-modal ul { padding-left: 20px; color: #c2cfc5; font-size: .82rem; }
 .modal-buy { margin-top: 13px; }
 
-.reveal { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
+.reveal { opacity: 1; transform: none; transition: opacity .65s ease, transform .65s ease; }
+.reveal.reveal-pending { opacity: 0; transform: translateY(18px); }
 .reveal.visible { opacity: 1; transform: none; }
 .delay-1 { transition-delay: .08s; }.delay-2 { transition-delay: .16s; }
-.no-js-reveal .reveal { opacity: 1; transform: none; }
 :focus-visible { outline: 2px solid var(--green); outline-offset: 4px; }
 .mobile-finder-cta { display: none; }
 
@@ -573,5 +577,6 @@ details p { max-width: 780px; margin: 13px 0 0; color: var(--muted); font-size: 
   .bundle-comparison { grid-template-columns: 1fr; }
   .bundle-comparison p { grid-column: auto; }
   .analytics-consent { left: 9px; right: 9px; bottom: 9px; width: calc(100% - 18px); grid-template-columns: 1fr; }
+  body:not(.product-page) .analytics-consent { bottom: 76px; }
   .analytics-consent-actions { display: grid; grid-template-columns: 1fr 1fr; }
 }

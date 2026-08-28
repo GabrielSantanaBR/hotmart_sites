@@ -134,14 +134,27 @@ window.addEventListener("resize", () => {
 
 const revealElements = document.querySelectorAll(".reveal");
 if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  revealElements.forEach((element) => element.classList.add("reveal-pending"));
+
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
       entry.target.classList.add("visible");
+      entry.target.classList.remove("reveal-pending");
       revealObserver.unobserve(entry.target);
     });
   }, { threshold: 0.08, rootMargin: "0px 0px -30px" });
-  revealElements.forEach((element) => revealObserver.observe(element));
+
+  window.requestAnimationFrame(() => {
+    revealElements.forEach((element) => revealObserver.observe(element));
+  });
+
+  window.setTimeout(() => {
+    revealElements.forEach((element) => {
+      element.classList.add("visible");
+      element.classList.remove("reveal-pending");
+    });
+  }, 1800);
 } else {
   revealElements.forEach((element) => element.classList.add("visible"));
 }
