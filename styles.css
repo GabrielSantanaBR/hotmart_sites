@@ -392,7 +392,7 @@ details p { max-width: 780px; margin: 13px 0 0; color: var(--muted); font-size: 
 }
 
 @media (max-width: 720px) {
-  body { padding-bottom: 72px; }
+  body:not(.product-page) { padding-bottom: 72px; }
   .solution-finder { padding: 86px 0; }
   .solution-finder::before { display: none; }
   .finder-heading { margin-bottom: 34px; }
