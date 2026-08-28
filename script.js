@@ -40,6 +40,20 @@ const productDetails = {
     ideal: "Negócios que cresceram além de controles separados e precisam reduzir informações perdidas e decisões sem contexto.",
     result: "O que vende, quem compra, o que precisa ser reposto e se a operação está avançando no ritmo das metas.",
     features: ["Até 150 produtos e 200 clientes", "Fornecedores, pedidos e compras", "Até 500 itens de pedido", "Ajustes e acompanhamento de estoque", "Metas e cenários", "Dashboard, relatórios e verificações", "Material de apoio para uso"]
+  },
+  conjunto: {
+    kicker: "ECOSSISTEMA COMPLETO",
+    title: "NexoPlan Conjunto Completo",
+    index: "04",
+    page: "conjunto/",
+    finderDescription: "A melhor escolha para levar as três soluções e organizar preço, dinheiro e operação de forma complementar.",
+    benefit: "Começar com o ecossistema completo da NexoPlan e economizar em relação às compras separadas.",
+    url: "https://pay.hotmart.com/E107372949H?off=5rpvl9n9",
+    regularUrl: "https://pay.hotmart.com/E107372949H?off=tcpgmrpt",
+    description: "O conjunto reúne NexoPlan Precifica, Gestão Financeira e Negócio 360 para acompanhar as principais decisões do pequeno negócio.",
+    ideal: "Empreendedores que se identificam com mais de um problema ou querem começar com as três ferramentas desde o início.",
+    result: "Preço, margem, movimentação financeira, clientes, pedidos, estoque e metas organizados por soluções complementares.",
+    features: ["NexoPlan Precifica completo", "NexoPlan Gestão Financeira completo", "NexoPlan Negócio 360 completo", "Os três manuais de uso", "Uma única compra pela Hotmart", "Melhor custo-benefício do ecossistema"]
   }
 };
 
